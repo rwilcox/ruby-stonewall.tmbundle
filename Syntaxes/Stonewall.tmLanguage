@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>rb</string>
+	</array>
+	<key>name</key>
+	<string>Ruby (Stonewall)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>(^\s*)(?=class\s+.+ActiveRecord::Base)</string>
+			<key>comment</key>
+			<string>Uses lookahead to match classes that (may) inherit from ActiveRecord::Base; includes 'source.ruby' to avoid infinite recursion</string>
+			<key>end</key>
+			<string>^\1(?=end)\b</string>
+			<key>name</key>
+			<string>meta.rails.model</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.ruby</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.context.ruby.rails.stonewall.action</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(action :.+?)\W+do.+</string>
+			<key>name</key>
+			<string>source.ruby.rails.aasm.event</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>source.ruby.rails</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.ruby.rails.aasm</string>
+	<key>uuid</key>
+	<string>DF364609-5217-4103-BFEC-DF72545331D8</string>
+</dict>
+</plist>
