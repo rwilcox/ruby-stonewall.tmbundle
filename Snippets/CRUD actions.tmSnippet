@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:s}.action :create do |${2:model}, user|
+  true
+end
+
+$1.action :read do |$2, user|
+  true
+end
+
+$1.action :update do |$2, user|
+  true
+end
+
+$1.action :delete do |$2, user|
+  true
+end
+</string>
+	<key>name</key>
+	<string>CRUD actions</string>
+	<key>tabTrigger</key>
+	<string>crud</string>
+	<key>uuid</key>
+	<string>87C505FE-D899-430B-A472-21E56DE873B1</string>
+</dict>
+</plist>
